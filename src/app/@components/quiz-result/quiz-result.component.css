@@ -1,0 +1,94 @@
+/* 容器背景 */
+.page-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #2c5e5e 0%, #4ca1af 100%);  /* 漂亮漸層 */
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.content-wrapper {
+  width: 100%;
+  max-width: 1000px;
+}
+
+/* 標題卡片：改為左右配置 */
+.header-card {
+  background-color: white;
+  padding: 25px 35px;
+  border-radius: 16px 16px 0 0; /* 上方圓角 */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.subtitle {
+  color: #7f8c8d;
+  font-size: 14px;
+  margin: 0;
+  margin-bottom: 5px;
+}
+
+.main-title {
+  color: #2c3e50;
+  font-size: 24px;
+  margin: 0;
+}
+
+/* 按鈕群組 */
+.header-right {
+  display: flex;
+  gap: 12px;
+}
+
+/* 按鈕微調：不再使用純紅邊框 */
+.btn-secondary {
+  border-color: #bdc3c7 !important;
+  color: #7f8c8d !important;
+  line-height: 36px;
+}
+
+.btn-chart {
+  background-color: #1a73e8 !important; /* 專業藍 */
+  color: white !important;
+  line-height: 36px;
+}
+
+/* 表格容器：底部圓角 */
+.table-container {
+  background: white;
+  border-radius: 0 0 16px 16px; /* 下方圓角與上方拼接 */
+  overflow: hidden;  /* 圓角與陰影 */
+  padding: 0 20px;
+}
+
+/* Material Table 標頭美化 */
+.mat-mdc-header-cell {
+  background-color: #fafafa !important;
+  color: #2c3e50 !important;
+  font-weight: 600 !important;
+  font-size: 15px !important;
+  border-bottom: 2px solid #eee !important;
+  text-align: center !important;
+}
+
+.mat-mdc-cell {
+  text-align: center !important;
+  padding: 15px 0 !important;
+  color: #34495e;
+}
+
+/* 查看回覆按鈕 */
+.view-btn {
+  color: #1a73e8 !important;
+  font-weight: 500 !important;
+  text-decoration: underline !important;
+  text-align: center;
+}
+
+/* Paginator 修正 */
+.mat-mdc-paginator {
+  background: white !important;
+  border-top: 1px solid #eee;
+}

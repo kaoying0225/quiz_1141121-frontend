@@ -1,0 +1,176 @@
+/* 全域背景 */
+.page-container {
+  min-height: 100vh;
+  background-color: #A8DADC;
+  padding: 40px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.content-wrapper {
+  width: 85%;
+  max-width: 1200px;
+}
+
+/* 搜尋區塊 */
+.search-card {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px 30px;
+  border-radius: 15px;
+  margin-bottom: 25px;
+  box-shadow: 0 8px 32px rgba(69, 123, 157, 0.2);
+}
+
+.top-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+.btn-logout {
+  background-color: #457B9D;
+  color: white;
+  border: none;
+  padding: 6px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-logout:hover { background-color: #1d3557; }
+
+/* 搜尋列排版 */
+.search-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.input-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.input-row input {
+  flex-grow: 1;
+  height: 40px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 0 15px;
+  font-size: 16px;
+  outline: none;
+}
+
+.date-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.date-picker {
+  flex: 1;
+}
+
+/* 搜尋按鈕 */
+.btn-search {
+  background-color: #fb3c3c;
+  color: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+.btn-search:hover { transform: scale(1.05); background-color: #e33535; }
+
+/* 表格樣式優化 */
+.table-container {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden; /* 確保圓角生效 */
+}
+
+table {
+  width: 100%;
+}
+
+th.mat-mdc-header-cell {
+  background-color: #457B9D !important;
+  color: white !important;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 15px !important;
+  text-align: center;
+}
+
+td.mat-mdc-cell {
+  padding: 12px !important;
+  text-align: center;
+  font-size: 15px;
+  color: #333;
+}
+
+/* 隔行變色 */
+tr.mat-mdc-row:nth-child(even) {
+  background-color: #f9fbfb;
+}
+
+tr.mat-mdc-row:hover {
+  background-color: #f1faee !important;
+}
+
+/* 標題欄位加粗 */
+.title-cell {
+  font-weight: 500;
+  color: #1d3557 !important;
+}
+
+/* 操作按鈕樣式 */
+.link-btn {
+  background: none;
+  border: 1px solid #fb3c3c;
+  color: #fb3c3c;
+  padding: 5px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.link-btn:hover {
+  background: #fb3c3c;
+  color: white;
+}
+
+.link-btn.secondary {
+  border-color: #457B9D;
+  color: #457B9D;
+}
+
+.link-btn.secondary:hover {
+  background: #457B9D;
+  color: white;
+}
+
+/* 狀態標籤: 灰色 (用於 已結束、未發佈、未開始) */
+.status-badge {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 500;
+  background-color: #e0e0e0;
+  color: #757575;
+  display: inline-block;
+  min-width: 60px;
+  text-align: center;
+}
+
+.status-badge.active {
+  background-color: #81edc9;
+  color: #2e7d32;
+}

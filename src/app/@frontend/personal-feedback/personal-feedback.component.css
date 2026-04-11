@@ -1,0 +1,137 @@
+.page-container {
+  min-height: 100vh;
+  background-color: #A8DADC; /* 莫蘭迪綠背景 */
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.feedback-card {
+  width: 90%;
+  max-width: 850px;
+  background: white;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(69, 123, 157, 0.2);
+}
+
+/* 標題區 */
+.feedback-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* 日期範圍 */
+.date-range {
+  font-size: 14px;
+  color: #666;
+  text-align: right;
+  margin-bottom: 10px;
+}
+
+h1 {
+  color: #1d3557; /* 深藍色 */
+  margin: 0 0 15px 0;
+}
+
+/* 用戶資料卡片 */
+.user-summary {
+  background-color: #f1faee; /* 淡淡的蘋果綠 */
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 40px;
+}
+
+/* 總結格線 */
+.summary-grid {
+  display: grid;  /* 使用 CSS Grid 進行兩欄佈局 */
+  grid-template-columns: 1fr 1fr;  /* 2 列等分 */
+  gap: 15px;
+}
+
+/* 總結項目 */
+.label {
+  font-weight: bold;
+  color: #457B9D;
+}
+
+/* 題目區塊 */
+.answer-item {
+  margin-bottom: 40px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 20px;
+}
+
+/* 題目標題 */
+.question-text {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.q-number {
+  color: #eb4949;
+}
+
+/* 選項預覽區 */
+.options-preview {
+  display: flex;
+  flex-direction: column;  /* 垂直排列選項 */
+  gap: 10px;
+  margin-bottom: 15px;
+  opacity: 0.6; /* 讓原始選項變淡，視覺上強調用戶回答 */
+}
+
+.option-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* 唯讀輸入框樣式 */
+.read-only-input {
+  cursor: default;  /* 隱藏滑鼠指標 */
+}
+
+/* 用戶回答亮點區 */
+.user-answer-box {
+  background-color: #f8fbfb;
+  padding: 12px 20px;
+  border-left: 4px solid #457B9D;
+  border-radius: 4px;
+}
+
+.answer-label {
+  font-weight: bold;
+  color: #457B9D;
+  font-size: 0.9rem;
+}
+
+.answer-content {
+  color: #333;
+}
+
+/* 按鈕置中 */
+.feedback-footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.btn-back {
+  padding: 12px 60px;
+  background-color: #457B9D;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: bold;  /* 加粗字體 */
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-back:hover {
+  background-color: #1d3557;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(29, 53, 87, 0.3);
+}

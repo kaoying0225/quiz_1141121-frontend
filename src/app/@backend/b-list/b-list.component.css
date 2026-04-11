@@ -1,0 +1,128 @@
+/* 基礎容器：使用冷色調背景與前台區隔 */
+.admin-container {
+  min-height: 100vh;
+  background-color: #f0f2f5;
+  font-family: 'Roboto', sans-serif;  /* 使用 Google Fonts 中的 Roboto 字體 */
+}
+
+/* 頂部導航列 */
+.admin-header {
+  background-color: #1a202c; /* 深色背景展現專業感 */
+  color: white;
+  padding: 1rem 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+
+  /* 標題與徽章 */  /* 使用較大的字體與適當的間距提升可讀性 */
+  h1 { margin: 0; font-size: 1.5rem; letter-spacing: 1px; }  /* 標題 */
+  .badge { font-size: 0.7rem; background: #4a5568; padding: 2px 8px; border-radius: 4px; vertical-align: middle; }  /* 導航連結 */
+}
+
+/* 主要內容區 */
+.content-wrapper {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+/* 篩選卡片 */
+.filter-card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+
+  /* 搜尋列 */
+  .search-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+}
+
+.date-range {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  .date-separator { color: #718096; font-weight: bold; }  /* 中間分隔符號 */
+}
+
+/* 操作區 */
+.action-bar {
+  margin-bottom: 15px;
+  display: flex;
+  gap: 10px;
+  .add-btn { background-color: #38a169; color: white; }  /* 新增按鈕 */
+}
+
+/* 表格優化 */
+.table-container {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;  /* 圓角與陰影 */
+
+  table { width: 100%; }
+
+  /* 表格標題列 */
+  th.mat-mdc-header-cell {
+    background-color: #edf2f7;
+    color: #2d3748;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 15px;
+    text-align: center;
+  }
+
+  td.mat-mdc-cell {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #edf2f7;
+  }
+
+  /* 隔行變色 */
+  tr.mat-mdc-row:nth-child(even) { background-color: #fafafa; }  /* 滑鼠懸停效果 */
+  tr.mat-mdc-row:hover { background-color: #f0f9ff; transition: 0.3s; }  /* 分頁區 */
+}
+
+/* 基礎標籤樣式 */
+.status-badge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: white; /* 統一文字為白色 */
+  display: inline-block;
+  min-width: 60px;
+  text-align: center;
+}
+
+/* 狀態顏色定義 */
+.gray {
+  background-color: #9e9e9e; /* 灰色 - 未發佈 */
+  color: #ffffff;
+}
+
+.green {
+  background-color: #4caf50; /* 綠色 - 進行中 */
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.4);
+}
+
+.blue {
+  background-color: #2196f3; /* 藍色 - 未開始 */
+}
+
+.red {
+  background-color: #f44336; /* 紅色 - 已結束 */
+}
+
+.title-link {
+  color: #3182ce;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  &:hover { text-decoration: underline; }
+}

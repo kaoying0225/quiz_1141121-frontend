@@ -1,0 +1,18 @@
+<div >
+  <h2 mat-dialog-title
+      style="background-color: rgb(201, 246, 246);
+            text-align: center;
+            font-size :25px;
+            padding: 0 0 2px 0">管理者登入</h2>
+
+<mat-dialog-content style="margin: 3% 0; text-align: center;">
+  <p>帳號: <input type="text" [(ngModel)]="account"> </p>
+  <p>密碼: <input type="password" [(ngModel)]="password"></p>
+  <p style="color: red;">{{Data}}</p>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button (click)="onNoClick()">取消</button>
+  <button (click)="onClick()">登入</button>
+</mat-dialog-actions>
+</div>

@@ -1,0 +1,133 @@
+/* 主容器：限制最大寬度並置中 */
+.preview-container {
+  max-width: 850px;
+  margin: 40px auto;
+  padding: 40px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  /* 設定字體的優先順序：優先使用現代無襯線體，中文字則對應微軟正黑體 (Microsoft JhengHei) 或蘋方 (PingFang) */
+  font-family: "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+}
+
+/* 頂部資訊區 */
+.preview-header {
+  border-bottom: 2px solid #f0f4f4;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+}
+
+.date-badge {
+  text-align: right;
+  font-size: 0.85rem;
+  color: #888;
+  margin-bottom: 8px;
+}
+
+.quiz-title {
+  text-align: center;
+  color: #2c3e50;
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.quiz-desc {
+  color: #5f6368;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* 題目區塊 */
+.question-item {
+  margin-bottom: 35px;
+  /* 語法解析：
+     - fadeIn: 動畫名稱 (對應上面的 @keyframes)
+     - 0.5s:   動畫持續時間 (0.5 秒)
+     - ease:   動畫速度曲線 (先慢-後快-再慢，感覺比較平滑)
+  */
+  animation: fadeIn 0.5s ease;
+}
+
+.question-label {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.required-tag {
+  color: #d93025;
+  margin-left: 5px;
+  font-size: 0.9rem;
+}
+
+/* 選項群組樣式 */
+.options-group {
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* 選項之間的垂直間距 */
+}
+
+/* 針對 Checkbox 的美化 */
+.custom-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  opacity: 0.7; /* 預覽模式略微變淡 */
+}
+
+/* 針對 Textarea 的美化 */
+.preview-textarea {
+  width: 100%;
+  max-width: 500px;
+  min-height: 100px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background-color: #f8f9fa;
+  padding: 10px;
+  /* 禁用文字框的手動縮放功能，避免使用者拉動框體導致排版破裂 */
+  resize: none;
+}
+
+/* 底部按鈕區 */
+.footer-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  border-top: 1px solid #eee;
+  padding-top: 30px;
+}
+
+.btn-home {
+  padding: 10px 35px;
+  background-color: #546e7a;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  /* 設定樣式切換的平滑過渡：在 0.3 秒內以 ease 曲線完成所有樣式變化 */
+  transition: all 0.3s ease;
+}
+
+.btn-home:hover {
+  background-color: #37474f;
+  transform: translateY(-2px);
+}
+
+/* 定義一個名為 fadeIn 的關鍵幀動畫
+   使元素從透明到不透明 */
+@keyframes fadeIn {
+  from {
+    opacity: 0; /* 0% 時：完全透明 */
+    transform: translateY(10px); /* 0% 時：往下偏移 10px */
+  }
+  to {
+    opacity: 1; /* 100% 時：完全不透明 */
+    transform: translateY(0); /* 100% 時：回到原本位置 */
+  }
+}

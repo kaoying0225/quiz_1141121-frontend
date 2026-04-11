@@ -1,0 +1,152 @@
+
+/* 1. 彈窗全域與分頁樣式 */
+.dialog-container {
+  font-family: "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  color: #333;
+  /* 讓彈窗內部的分頁切換時，內容有淡入效果 */
+  animation: fadeIn 0.4s ease backwards;
+}
+
+.tab-content {
+  padding: 24px;
+  background-color: #fafafa;
+  min-height: 400px; /* 統一最小高度防止跳動 */
+  animation: fadeIn 0.4s ease backwards;
+}
+
+/* 2. 標題與標籤 */
+h2, h3 {
+  margin-top: 18px;
+  margin-bottom: 8px;
+  color: #444;
+  font-weight: 600;
+}
+
+/* 3. 表單控制項統一風格 (整合你原本的樣式與美化) */
+input[type="text"],
+input[type="date"],
+textarea,
+select {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: #ffffff;
+  transition: all 0.3s ease; /* 剛才提到的平滑過渡 */
+  box-sizing: border-box; /* 確保寬度包含 padding */
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: #3f51b5; /* 聚焦時變為 Material 藍色 */
+  box-shadow: 0 0 0 3px rgba(63, 81, 181, 0.1); /* 增加柔和外環 */
+}
+
+textarea {
+  resize: none; /* 禁用手動縮放，保持排版穩定 */
+}
+
+/* 確保 actions 區域水平撐滿，但內距與內容一致 */
+mat-dialog-actions {
+  display: block !important; /* 改為 block，讓內部的容器決定排版 */
+  padding: 16px 24px !important; /* 這裡的 padding 建議與 tab-content 一致 */
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* 4. 按鈕美化 (整合你的特定色值) */
+.btn {
+  padding: 6px 18px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn:active { transform: scale(0.96); } /* 點擊時縮小效果 */
+
+.btn-warn { background-color: #f44336; color: white; }
+.btn-warn:hover { background-color: #d32f2f; }
+
+.btn-warn-outline {
+  background-color: transparent;
+  border: 1px solid #f44336;
+  color: #f44336;
+}
+.btn-warn-outline:hover { background-color: rgba(244, 67, 54, 0.05); }
+
+.btn-save { background-color: #4caf50; color: white; }
+.btn-save:hover { background-color: #388e3c; }
+
+.btn-gray { background-color: #607d8b; color: white; }
+.btn-gray:hover { background-color: #455a64; }
+
+/* 5. 題目設計區塊佈局 (保留你的 4:6 比例) */
+.question-layout {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.question-edit-panel {
+  flex: 4; /* 左側佔 4 */
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05); /* 更輕柔的陰影 */
+}
+
+.question-list-panel {
+  flex: 6; /* 右側佔 6 */
+}
+
+/* 6. 表格美化 (保留你的藍灰色調並優化) */
+.mat-elevation-z8 {
+  box-shadow: none !important;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  /* 隱藏溢出內容：確保子元素不會超出邊框，並讓父容器的圓角能正確剪裁內容 */
+  overflow: hidden;
+}
+
+/* 表格標題列 */
+.mat-mdc-header-cell {
+  background-color: #f5f7f9 !important; /* 你的藍灰色基調 */
+  font-weight: bold !important;
+  color: #555 !important;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+/* 儲存問題的按鈕容器 */
+.action-right {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 15px;
+}
+
+/* 7. 預覽區塊 */
+.preview-box {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  border: 2px dashed #e0e0e0; /* 虛線邊框增加預覽感 */
+  margin: 10px 0;
+}
+
+/* 8. 動畫效果 */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}

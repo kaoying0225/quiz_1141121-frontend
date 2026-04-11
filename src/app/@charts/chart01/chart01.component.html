@@ -1,0 +1,15 @@
+<div style="width: 57%; margin: 0 auto; background-color: rgb(202, 233, 233);">
+<button routerLink="/list" style="margin-left: 92.5%;">回首頁</button>
+<div style="text-align: center;">
+  <h2 style="font-size: 40px;">問卷標題</h2>
+</div>
+<div>
+  <p>問卷時間</p>
+</div>
+
+<div style="width: 65%; ">
+@for (data of chartArray; track $index) {
+  <canvas id="{{data.id}}"></canvas>
+}
+</div>
+</div>

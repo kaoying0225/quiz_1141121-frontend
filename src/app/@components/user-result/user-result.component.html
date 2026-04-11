@@ -1,0 +1,44 @@
+@if (this.data) {
+<div class="survey-detail-container">
+  <div class="survey-card">
+    <header class="survey-header">
+      <p class="date-range">{{this.quizData.startDate}} ~ {{this.quizData.endDate}}</p>
+      <h2 class="survey-title">{{this.quizData.title}}</h2>
+      <p style="color: #666; text-align: center;">{{this.quizData.description}}</p>
+    </header>
+
+    <div class="user-info-grid">
+      <div class="info-item"><span class="info-label">姓名: </span> {{this.data.userName}}</div>
+      <div class="info-item"><span class="info-label">電子郵件: </span> {{this.data.email}}</div>
+      <div class="info-item"><span class="info-label">手機號碼: </span> {{this.data.phone}}</div>
+      <div class="info-item"><span class="info-label">年齡: </span> {{this.data.age}}</div>
+    </div>
+
+    <div class="questions-list">
+      @for(item of this.data.answerVoList; track $index){
+      <div class="question-block">
+        <p class="question-text">{{item.question.questionId}}. {{item.question.question}}?</p>
+        <div class="options-wrapper">
+          @for(item1 of item.question.options; track $index){
+          @if(item.question.type == "Single" ){
+          <input type="radio" class="read" [checked]="item.answer === item1">
+          {{item1}}
+          } @else if(item.question.type == "Multi" ){
+          <input type="checkbox" class="read" [checked]="item.answer.includes(item1)">
+          {{item1}}
+          }
+          }
+        </div>
+        <div class="answer-text">
+          <strong>Answer: </strong>{{item.answer}}
+        </div>
+      </div>
+      }
+    </div>
+
+    <div class="btn-footer">
+      <button (click)="goBack()" class="btn-back">回上頁</button>
+    </div>
+  </div>
+</div>
+}

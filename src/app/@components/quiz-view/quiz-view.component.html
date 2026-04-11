@@ -1,0 +1,45 @@
+<!-- 確定quiz和questionList有資料，才顯示畫面 -->
+@if(!this.isLoading){
+<div class="preview-container">
+  <header class="preview-header">
+    <p class="date-badge">活動期間： {{quiz.startDate}} ~ {{quiz.endDate}}</p>
+    <h2 class="quiz-title">{{quiz.title}}</h2>
+    <p class="quiz-desc">{{quiz.description}}</p>
+  </header>
+
+  <div class="questions-wrapper">
+    @for (item of this.quiz.questionList; track $index) {
+    <div class="question-item">
+      <p class="question-label">
+        {{item.questionId}}. {{item.question}}
+        @if(item.required){ <span class="required-tag">* (必填)</span> }
+
+      <div class="options-group">
+        @if(item.type == "Single"){
+        <mat-radio-group class="options-group">
+          @for(option of item.options; track $index){
+          <!-- pointer-events: none: 禁止點擊事件 -->
+          <mat-radio-button [value]="option" style="pointer-events: none;">
+            {{option}}
+          </mat-radio-button>
+          }
+        </mat-radio-group>
+        }@else if(item.type == "Multi"){
+        @for(option of item.options; track $index){
+        <label class="custom-checkbox">
+          <input type="checkbox" disabled>
+          <span>{{option}}</span>
+        </label>
+        }
+        }@else{
+        <textarea type="Text" disabled style="min-width: 30vw;"></textarea>
+        }
+      </div>
+    </div>
+    }
+  </div>
+  <div class="footer-actions">
+    <button routerLink="//blist" class="btn-home">回首頁</button>
+  </div>
+</div>
+}

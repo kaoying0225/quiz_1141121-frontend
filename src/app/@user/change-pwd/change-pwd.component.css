@@ -1,0 +1,105 @@
+.page-container {
+  height: 100vh;
+  background-color: #A8DADC;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  width: 90%;
+  max-width: 400px;
+  padding: 2.5rem;
+  background-color: #f6faf9;
+  border-radius: 15px;
+  box-shadow: 0 15px 35px rgba(69, 123, 157, 0.3);
+}
+
+/* 標頭區優化 */
+.header {
+  text-align: center;
+  position: relative;  /* 為了定位返回按鈕 */
+  margin-bottom: 2rem;
+}
+
+.btn-back {
+  position: absolute;
+  top: -10px;
+  right: 0;
+  background-color: #9d9393;
+  border: none;
+  padding: 5px 12px;
+  font-size: 12px;
+  color: white;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-back:hover {
+  background-color: #7a7373;
+}
+
+h2 {
+  color: #eb4949;
+  margin: 10px 0 5px 0;
+}
+
+h3 {
+  color: #666;
+  font-size: 1.1rem;
+  margin-top: 0;
+}
+
+/* 表單區塊 */
+.input-group {
+  margin-bottom: 1.2rem;
+}
+
+.input-group p {
+  color: #ef7a7a;
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+input {
+  height: 45px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;  /* 去掉默認的藍色邊框 */
+  transition: border-color 0.3s;
+}
+
+input:focus {
+  border-color: #457B9D;
+}
+
+/* 提交按鈕 */
+.action-group {
+  margin-top: 2rem;
+}
+
+.btn-submit {
+  border: none;
+  border-radius: 25px;
+  background-color: #fb3c3c;
+  color: white;
+  height: 45px;
+  width: 100%;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.1s;
+}
+
+.btn-submit:hover {
+  background-color: #e33535;
+}
+
+.btn-submit:active {
+  transform: scale(0.98);  /* 按下去的縮放感 */
+}

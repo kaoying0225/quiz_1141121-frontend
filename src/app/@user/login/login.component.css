@@ -1,0 +1,134 @@
+/* 背景容器 */
+.login-container {
+  height: 100vh;
+  background-color: #A8DADC;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* 確保水平垂直置中 */
+}
+
+/* 登入卡片 */
+.login-card {
+  width: 90%;
+  max-width: 400px; /* 限制最大寬度，電腦看才不會太寬 */
+  min-height: 50vh;
+  padding: 2.5rem;
+  background-color: #f6faf9;
+  border-radius: 15px;
+  box-shadow: 0 15px 35px rgba(69, 123, 157, 0.3);
+}
+
+/* 標題區 */
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.header h2 {
+  color: #eb4949;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+/* 輸入框群組 */
+.input-group {
+  margin-bottom: 1.2rem;
+}
+
+.input-group p {
+  color: #ef7a7a;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.input-group input {
+  height: 45px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.input-group input:focus {
+  border-color: #ef7a7a; /* 點擊時顏色變換 */
+}
+
+/* 忘記密碼 */
+.forgot-pwd {
+  margin-bottom: 1.5rem;
+}
+
+.forgot-pwd label {
+  color: royalblue;
+  cursor: pointer;
+  font-size: 13px;
+  transition: opacity 0.2s;
+}
+
+.forgot-pwd label:hover {
+  text-decoration: underline;  /* 滑鼠懸停時下劃線 */
+  opacity: 0.8;  /* 滑鼠懸停時透明度降低 */
+}
+
+/* 登入按鈕 */
+.btn-login {
+  border: none;
+  border-radius: 25px;
+  background-color: #fb3c3c;
+  color: white;
+  height: 45px;
+  width: 100%;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;  /* 滑鼠懸停時變成小手 */
+  transition: background-color 0.3s, transform 0.1s;
+}
+
+.btn-login:hover {
+  background-color: #e33535;
+}
+
+.btn-login:active {
+  transform: scale(0.98); /* 按下去的縮放感 */
+}
+
+/* 頁尾註冊區 */
+.footer {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.footer p {
+  color: #666; /* 改成灰色讓視覺更平衡 */
+  margin-bottom: 5px;
+}
+
+.link-blue {
+  color: royalblue;
+  text-decoration: none;  /* 取消下劃線 */
+  font-weight: 500;
+}
+
+.link-blue:hover {
+  text-decoration: underline;
+}
+
+/* 後台入口 */
+.admin-entry {
+  text-align: right;
+  margin-top: 1.5rem;
+}
+
+.admin-entry p {
+  color: #aaa;
+  cursor: pointer;
+  font-size: 12px;
+  display: inline-block;
+}
+
+.admin-entry p:hover {
+  color: royalblue;
+}

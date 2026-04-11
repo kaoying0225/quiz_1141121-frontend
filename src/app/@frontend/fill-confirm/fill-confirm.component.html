@@ -1,0 +1,44 @@
+@if(data && quiz){
+<div class="page-container">
+  <div class="confirm-card">
+    <header class="confirm-header">
+      <div class="date-range">{{quiz.startDate}} ~ {{quiz.endDate}}</div>
+      <h1>確認您的作答內容</h1>
+      <p class="quiz-title">{{quiz.title}}</p>
+    </header>
+
+    <section class="user-summary">
+      <div class="summary-grid">
+        <div class="summary-item"><span class="label">姓名：</span>{{data.name}}</div>
+        <div class="summary-item"><span class="label">電子郵件：</span>{{data.email}}</div>
+        <div class="summary-item"><span class="label">手機號碼：</span>{{data.phone}}</div>
+        <div class="summary-item"><span class="label">年齡：</span>{{data.age}}</div>
+      </div>
+    </section>
+
+    <main class="review-list">
+      <h3 class="section-title">作答明細</h3>
+      @for(item of data.answerVoList; track $index){
+        <div class="review-item">
+          <p class="question-line">
+            <span class="q-index">{{$index + 1}}.</span>
+            <span class="q-text">{{item.question.question}}</span>
+            <span class="type-tag">[{{item.question.type == 'Single' ? '單選' : item.question.type == 'Multi' ? '多選' : '簡答'}}]</span>
+            @if(item.question.required){ <span class="required-hint">(必填)</span> }
+          </p>
+
+          <div class="answer-row">
+            <span class="answer-label">您的回答：</span>
+            <span class="answer-text">{{item.answer}}</span>
+          </div>
+        </div>
+      }
+    </main>
+
+    <footer class="confirm-footer">
+      <button class="btn-secondary" (click)="goBack()">返回修改</button>
+      <button class="btn-primary" (click)="submit()">確認送出</button>
+    </footer>
+  </div>
+</div>
+}

@@ -1,0 +1,53 @@
+@if (this.data) {
+<div class="page-container">
+  <div class="feedback-card">
+    <header class="feedback-header">
+      <div class="date-range">{{this.quizData.startDate}} ~ {{this.quizData.endDate}}</div>
+      <h1>{{this.quizData.title}}</h1>
+      <p class="description">{{this.quizData.description}}</p>
+    </header>
+
+    <section class="user-summary">
+      <div class="summary-grid">
+        <div class="summary-item"><span class="label">姓名：</span>{{this.data.userName}}</div>
+        <div class="summary-item"><span class="label">電子郵件：</span>{{this.data.email}}</div>
+        <div class="summary-item"><span class="label">手機號碼：</span>{{this.data.phone}}</div>
+        <div class="summary-item"><span class="label">年齡：</span>{{this.data.age}}</div>
+      </div>
+    </section>
+
+    <main class="answer-list">
+      @for(item of this.data.answerVoList; track $index){
+        <div class="answer-item">
+          <p class="question-text">
+            <span class="q-number">{{item.question.questionId}}.</span>
+            {{item.question.question}}
+          </p>
+
+          <div class="options-preview">
+            @for(option of item.question.options; track $index){
+              <div class="option-row">
+                @if(item.question.type == "Single"){
+                  <input type="radio" class="read-only-input" disabled>
+                } @else if(item.question.type == "Multi"){
+                  <input type="checkbox" class="read-only-input" disabled>
+                }
+                <span class="option-text">{{option}}</span>
+              </div>
+            }
+          </div>
+
+          <div class="user-answer-box">
+            <span class="answer-label">您的回答：</span>
+            <span class="answer-content">{{item.answer}}</span>
+          </div>
+        </div>
+      }
+    </main>
+
+    <footer class="feedback-footer">
+      <button class="btn-back" (click)="goBack()">回上一頁</button>
+    </footer>
+  </div>
+</div>
+}

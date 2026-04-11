@@ -1,0 +1,37 @@
+<!-- flex-wrap: wrap: 子元素的總寬度超過了父容器的寬度時，強迫後面的元素跳到下一行 -->
+<div style="display: flex; flex-wrap: wrap; gap: 20px; padding: 20px;">
+
+  <!-- 這裡會使用 Angular 的結構指令 @for 來遍歷 processedData 陣列，對每個問題的統計資料進行渲染，並且根據問題的類型來決定顯示文字答案還是圖表 -->
+  @for (data of processedData; track $index; let i = $index) {
+    <mat-card style="width: 450px;">
+      <mat-card-header>
+        <mat-card-title>{{ i + 1 }}. {{ data.title }}</mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content style="padding: 15px;">
+        @if (data.type === 'Text') {
+          <!-- overflow-y: auto: 當內容超過容器高度時，會自動出現垂直滾動條 -->
+          <div style="max-height: 200px; overflow-y: auto; background: #fafafa; border: 1px solid #eee; border-radius: 4px;">
+            @for (ans of data.answers; track $index) {
+              <div style="padding: 10px; border-bottom: 1px solid #eee;">
+                {{ ans }}
+              </div>
+            } @empty {
+              <div style="padding: 10px; color: gray;">尚無填答內容</div>
+            }
+          </div>
+        }
+
+        @else {
+          <!-- position: relative: 這裡會把 canvas 元素包在一個相對定位的 div 裡，這樣就可以讓圖表在 div 裡面自動調整大小，保持響應式設計 -->
+          <div style="position: relative; height: 300px;">
+            <canvas [id]="'chart-' + i"></canvas>
+          </div>
+        }
+      </mat-card-content>
+    </mat-card>
+  } @empty {
+    <p>載入中或目前無問卷統計資料...</p>
+  }
+
+</div>

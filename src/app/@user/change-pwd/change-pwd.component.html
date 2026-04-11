@@ -1,0 +1,29 @@
+<div class="page-container">
+  <div class="card">
+    <div class="header">
+      <button (click)="backLogin()" class="btn-back">返回登入</button>
+      <h2>問卷調查系統</h2>
+      <h3>修改密碼</h3>
+    </div>
+
+    <div class="form-body">
+      <p>電子郵件</p>
+      <input type="text" [(ngModel)]="user.email" placeholder="請輸入電子郵件">
+    </div>
+
+    <div class="input-group">
+      <p>舊密碼</p>
+      <input type="password" [(ngModel)]="user.password" placeholder="請輸入舊密碼">
+    </div>
+
+    <div class="input-group">
+      <p>新密碼</p>
+      <input type="password" [(ngModel)]="user.newPassword" placeholder="請輸入新密碼">
+    </div>
+
+    <div class="action-group">
+      <button class="btn-submit" (click)="changePwd()">修改密碼</button>
+    </div>
+  </div>
+</div>
+

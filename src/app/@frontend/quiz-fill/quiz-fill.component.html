@@ -1,0 +1,71 @@
+@if(!this.isLoading){
+<div class="page-container">
+  <div class="quiz-card">
+
+    <header class="quiz-header">
+      <div class="date-range-badge">{{quiz.startDate}} ~ {{quiz.endDate}}</div>
+      <h1 class="main-title">{{quiz.title}}</h1>
+      <p class="quiz-description">{{quiz.description}}</p>
+    </header>
+
+    <section class="user-info-section">
+      <h3 class="info-title">填寫人資訊</h3>
+      <div class="info-grid">
+        <div class="info-item"><span class="label">姓名：</span>{{user.name}}</div>
+        <div class="info-item"><span class="label">電子郵件：</span>{{user.email}}</div>
+        <div class="info-item"><span class="label">手機號碼：</span>{{user.phone}}</div>
+        <div class="info-item"><span class="label">年齡：</span>{{user.age}}</div>
+      </div>
+    </section>
+
+    <main class="question-list">
+      @for (item of this.quiz.questionList; track $index) {
+        <div class="question-card">
+          <div class="question-header">
+            <span class="q-number">Q{{item.questionId}}.</span>
+            <span class="q-text">{{item.question}}</span>
+            @if(item.required){ <span class="required-tag">必填</span> }
+          </div>
+
+          <div class="answer-area">
+            @if(item.type == "Single"){
+              <mat-radio-group [(ngModel)]="item.selectedAnswer" class="vertical-radio-group">
+                @for(option of item.options; track $index){
+                  <mat-radio-button [value]="option" class="custom-radio">
+                    {{option}}
+                  </mat-radio-button>
+                }
+              </mat-radio-group>
+            }
+
+            @else if(item.type == "Multi"){
+              <div class="custom-checkbox-group">
+                @for(option of item.options; track $index){
+                  <label class="checkbox-container">
+                    <input type="checkbox" (change)="onCheckChange(item, option, $event)">
+                    <span class="checkmark"></span>
+                    <span class="option-label">{{option}}</span>
+                  </label>
+                }
+              </div>
+            }
+
+            @else {
+              <mat-form-field appearance="outline" class="full-width-input">
+                <mat-label>請輸入您的回答</mat-label>
+                <textarea matInput [(ngModel)]="item.selectedAnswer" rows="3" placeholder="在此輸入..."></textarea>
+                <mat-icon matSuffix>edit</mat-icon>
+              </mat-form-field>
+            }
+          </div>
+        </div>
+      }
+    </main>
+
+    <footer class="quiz-footer">
+      <button class="btn-outline" routerLink="/list">取消返回</button>
+      <button class="btn-submit" (click)="confirm()">下一步：確認內容</button>
+    </footer>
+  </div>
+</div>
+}
