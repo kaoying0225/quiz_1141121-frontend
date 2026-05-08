@@ -13,6 +13,8 @@ import { ChangePwdComponent } from './@user/change-pwd/change-pwd.component';
 import { ChartComponent } from './@components/chart/chart.component';
 
 export const routes: Routes = [
+  // 新增這行：當路徑為空（即開啟網站時），自動重導向到 login
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
   {path: 'registration', component: RegistrationComponent},
   {path: 'login', component: LoginComponent},
   {path: 'change-pwd', component: ChangePwdComponent},
